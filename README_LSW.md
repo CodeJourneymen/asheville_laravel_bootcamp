@@ -1,7 +1,10 @@
 Command-Shift-. to regenerate laravel helper file for PHPStorm.
 
+(git co main)
 
 https://ashe_laravelbootcamp.lndo.site/
+
+
 
 (git co 1_breeze)
 
@@ -30,3 +33,9 @@ This is NOT page reload like BrowserSync. Lando also supports browsersync too.
 
 Show dashboard after logged in.
 Can show routes/views and how to look them up.
+
+
+https://bootcamp.laravel.com/blade/creating-chirps
+
+
+(git co 2_creating_chirps)
