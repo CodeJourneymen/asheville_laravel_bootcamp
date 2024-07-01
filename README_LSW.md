@@ -28,3 +28,5 @@ Add some random text and show the vite hot module reloading working.
 This is NOT page reload like BrowserSync. Lando also supports browsersync too.
 
 
+Show dashboard after logged in.
+Can show routes/views and how to look them up.
