@@ -1,0 +1,47 @@
+name: ashe_laravelbootcamp
+recipe: laravel
+config:
+  webroot: public
+  php: '8.2'
+  database: mariadb
+  cache: redis
+services:
+  database:
+    ports:
+      - 51306:3306
+  # Set up Vite with Lando from here https://sinnbeck.dev/posts/getting-vite-and-laravel-to-work-with-lando
+  node:
+    type: node:18
+    scanner: false
+    ports:
+      # local-port:docker-port (For Vite)
+      - 3009:3009
+  mailhog:
+    type: mailhog
+    portforward: true
+    hogfrom:
+      - appserver
+tooling:
+  npm:
+    service: node
+  pint:
+    service: appserver
+  dev:
+    service: node
+    cmd: npm run dev
+  build:
+    service: node
+    cmd: npm run build
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for apache.
+    cmd: "docker-php-ext-enable xdebug && /etc/init.d/apache2 reload"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for apache.
+    cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
+    user: root
+proxy:
+  mailhog:
+    - mail.ashe_laravelbootcamp.lndo.site
