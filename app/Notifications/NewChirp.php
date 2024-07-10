@@ -39,7 +39,7 @@ class NewChirp extends Notification
         return (new MailMessage)
             ->subject("New Chirp from {$this->chirp->user->name}")
             ->greeting("New Chirp from {$this->chirp->user->name}")
-            ->line(Str::limit($this->chirp->message, 50))
+            ->line($this->chirp->message)
             ->action('Go to Chirper', url('/'))
             ->line('Thank you for using our application!');
     }
