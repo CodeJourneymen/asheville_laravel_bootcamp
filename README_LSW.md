@@ -38,4 +38,4 @@ Can show routes/views and how to look them up.
 https://bootcamp.laravel.com/blade/creating-chirps
 
 
-(git co 2_creating_chirps)
+(git co 3_creating_chirps)
